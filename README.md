@@ -25,7 +25,28 @@ Things you may want to cover:
 
 [ ] done
 
-User Story 1, Parent Index 
+GrowRooms  can have many strains
+
+Table -> GrowRooms
+-auto-generated ID (primary key)
+- name:string
+-is_flower:boolean
+-plant_capacity:integer
+-created_at:datetime
+-updated_at:datetime
+
+strains belong to one GrowRooms 
+table -> Strains
+-grow_facility_id:integer (foreign key)
+-name:String
+-is_sativa:boolean
+-thc_percentage:float
+-dry_weight:float
+-created_at:datetime
+-updated_at:datetime
+
+
+User Story 1, GrowRoom/parent Index: #shows ALL records of one model
 
 For each parent table
 As a visitor
@@ -41,7 +62,7 @@ Then I see the parent with that id including the parent's attributes
 (data from each column that is on the parent table)
 [ ] done
 
-User Story 3, Child Index 
+User Story 3, Child/strains Index 
 
 As a visitor
 When I visit '/child_table_name'

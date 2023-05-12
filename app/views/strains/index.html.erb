@@ -1,0 +1,9 @@
+<h1>Strains Index Page</h1>
+<% @strains.each do |strain| %>
+  <p><%= strain.name %></p>
+  <p><%= strain.is_sativa %></p>
+  <p><%= strain.thc_percentage %></p>
+  <p><%= strain.dry_weight %></p>
+  <% end %>
+
+

@@ -54,7 +54,7 @@ When I visit '/parents'
 Then I see the name of each parent record in the system
 [ ] done
 
-User Story 2, Parent Show 
+User Story 2, Parent/grow_rooms Show 
 
 As a visitor
 When I visit '/parents/:id'

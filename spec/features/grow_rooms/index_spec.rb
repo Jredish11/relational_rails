@@ -10,9 +10,20 @@ RSpec.describe "/grow_rooms", type: :feature do
       visit "/grow_rooms"
       expect(page).to have_content(room_1.name)
       expect(page).to have_content(room_2.name) 
+    end
+
+    it "I see the records are ordered by most recently created first and next to each of the records I see when it was created" do
+      visit "/grow_rooms"
+      expect(page).to have_content(room_1.name)
+      expect(page).to have_content(room_2.name)
+      expect(page).to have_content(room_1.created_at.strftime("%m/%d/%Y"))
+      expect(page).to have_content(room_2.created_at.strftime("%m/%d/%Y"))
+
+
 
     end
   end
+end
 
   
     

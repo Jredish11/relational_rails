@@ -1,4 +1,11 @@
 <h1>Grow Room Index Page</h1>
-<% @grow_rooms.each do |grow_room|  %>
-  <p><%= grow_room.name %></p>
-<% end %>
+
+<ul>
+  <% @grow_rooms.each do |grow_room| %>
+    <li>
+      <%= grow_room.name %>
+      <br>
+      Created at: <%= grow_room.created_at.strftime("%m/%d/%Y") %>
+    </li>
+  <% end %>
+</ul>

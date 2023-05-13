@@ -15,8 +15,12 @@ RSpec.describe "/grow_rooms/:id", type: :feature do
                                                 thc_percentage: 29.69,
                                                 dry_weight: 1323.43,
                                                 )}
-    # let!(:grow_room_strain_1) { GrowRoomStrain.create!(grow_room: grow_room, strain: strain_1) }
-    # let!(:grow_room_strain_2) { GrowRoomStrain.create!(grow_room: grow_room, strain: strain_2) }
+    let!(:gg4) { room_2.strains.create!(name: "Gorilla Glue #4",
+                                        is_sativa: false,
+                                        thc_percentage: 29.69,
+                                        dry_weight: 1323.43,
+                                        )}
+
 
 
     it "I see the grow_rooms with that id including the grow_rooms attributes" do
@@ -31,9 +35,13 @@ RSpec.describe "/grow_rooms/:id", type: :feature do
       expect(page).to have_content(room_2.plant_capacity)
     end
 
-    xit "displays count of the number of strains associated with this grow_room" do
+    it "displays count of the number of strains associated with this grow_room" do
       visit "/grow_rooms/#{room_1.id}"
-      expect(page).to have_content
+      expect(page).to have_content("Number of Strains: 2")
+      save_and_open_page
+
+      visit "/grow_rooms/#{room_2.id}"
+      expect(page).to have_content("Number of Strains: 1")
 
     end
   end

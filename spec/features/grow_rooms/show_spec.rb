@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "/grow_rooms/:id", type: :feature do
   #User Story 2
-  describe "as a visitor, vhen I visit grow_rooms/:id" do
+  describe "as a visitor, when I visit grow_rooms/:id" do
     let!(:room_1) { GrowRoom.create!(name: "Flower Room 1", is_flower: true, plant_capacity: 176)}
     let!(:room_2) { GrowRoom.create!(name: "Veg Room 1", is_flower: false, plant_capacity: 185)}
 

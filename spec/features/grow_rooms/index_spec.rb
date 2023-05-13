@@ -12,9 +12,9 @@ RSpec.describe "/grow_rooms", type: :feature do
       expect(page).to have_content(room_2.name) 
     end
 
+    #User Story 6
     it "I see the records are ordered by most recently created first and next to each of the records I see when it was created" do
       visit "/grow_rooms"
-      save_and_open_page
       expect(page).to have_content(room_1.name)
       expect(page).to have_content(room_2.name)
       expect(page).to have_content(room_1.created_at.strftime("%m/%d/%Y"))

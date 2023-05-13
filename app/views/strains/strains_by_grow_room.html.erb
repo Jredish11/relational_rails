@@ -1,0 +1,21 @@
+<h1>All Grow Rooms and Strains</h1>
+
+<table>
+  <tr>
+    <th>Grow Room Name</th>
+    <th>Strain Name</th>
+    <th>THC Percentage</th>
+    <th>Dry Weight</th>
+  </tr>
+  <% @grow_rooms.each do |grow_room| %>
+    <% grow_room.strains.each do |strain| %>
+      <tr>
+        <td><%= grow_room.name %></td>
+        <td><%= strain.name %></td>
+        <td><%= strain.is_sativa %></td>
+        <td><%= strain.thc_percentage %></td>
+        <td><%= strain.dry_weight %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

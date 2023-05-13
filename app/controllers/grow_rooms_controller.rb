@@ -5,5 +5,6 @@ class GrowRoomsController < ApplicationController
 
   def show
     @grow_room = GrowRoom.find(params[:id])
+    @strain_count = @grow_room.strains.count
   end
 end

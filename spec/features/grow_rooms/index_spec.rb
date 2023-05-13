@@ -8,10 +8,11 @@ RSpec.describe "/grow_rooms", type: :feature do
 
     it "I see the name of each grow_room" do
       visit "/grow_rooms"
-  # save_and_open_page
       expect(page).to have_content(room_1.name)
       expect(page).to have_content(room_2.name) 
 
     end
   end
-end
+
+  
+    

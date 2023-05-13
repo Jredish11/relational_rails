@@ -49,7 +49,8 @@ RSpec.describe "/strains", type: :feature do
 
     it "I see each Strain that is associated with that Grow_Room with each Strain's attributes" do
       visit "/grow_rooms/#{room_1.id}/strains"
-      save_and_open_page
+      # save_and_open_page
+      expect(page).to have_content(room_1.name)
       expect(page).to have_content(flo.name)
       expect(page).to have_content(flo.is_sativa)
       expect(page).to have_content(flo.thc_percentage)

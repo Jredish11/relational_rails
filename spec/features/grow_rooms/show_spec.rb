@@ -5,6 +5,19 @@ RSpec.describe "/grow_rooms/:id", type: :feature do
   describe "as a visitor, when I visit grow_rooms/:id" do
     let!(:room_1) { GrowRoom.create!(name: "Flower Room 1", is_flower: true, plant_capacity: 176)}
     let!(:room_2) { GrowRoom.create!(name: "Veg Room 1", is_flower: false, plant_capacity: 185)}
+    let!(:flo) { room_1.strains.create!(name: "Flo OG", 
+                                        is_sativa: true, 
+                                        thc_percentage: 23.04, 
+                                        dry_weight: 1500.23,
+                                        )}
+    let!(:gary_payton) { room_1.strains.create!(name: "Gary Payton",
+                                                is_sativa: false,
+                                                thc_percentage: 29.69,
+                                                dry_weight: 1323.43,
+                                                )}
+    # let!(:grow_room_strain_1) { GrowRoomStrain.create!(grow_room: grow_room, strain: strain_1) }
+    # let!(:grow_room_strain_2) { GrowRoomStrain.create!(grow_room: grow_room, strain: strain_2) }
+
 
     it "I see the grow_rooms with that id including the grow_rooms attributes" do
       visit "/grow_rooms/#{room_1.id}"
@@ -16,6 +29,12 @@ RSpec.describe "/grow_rooms/:id", type: :feature do
       expect(page).to have_content(room_2.name)
       expect(page).to have_content(room_2.is_flower)
       expect(page).to have_content(room_2.plant_capacity)
+    end
+
+    xit "displays count of the number of strains associated with this grow_room" do
+      visit "/grow_rooms/#{room_1.id}"
+      expect(page).to have_content
+
     end
   end
 end

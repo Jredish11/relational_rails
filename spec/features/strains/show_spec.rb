@@ -18,7 +18,7 @@ RSpec.describe "/strains/:id", type: :feature do
 
     it "should see the strain with that id and their attributes" do
       visit "/strains/#{flo.id}"
-      save_and_open_page
+      # save_and_open_page
       expect(page).to have_content(flo.name)
       expect(page).to have_content(flo.is_sativa)
       expect(page).to have_content(flo.thc_percentage)

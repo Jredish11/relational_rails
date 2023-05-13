@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "/grow_rooms/:id/strains", to: "strains#strains_by_grow_room"
     get "/strains", to: "strains#index"
     get "/strains/:id", to: "strains#show"
+    get "/", to: "strains#index"
   # Defines the root path route ("/")
   # root "articles#index"
 end

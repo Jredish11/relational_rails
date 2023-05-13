@@ -29,8 +29,6 @@ RSpec.describe "/strains/:id", type: :feature do
       expect(page).to have_content(gary_payton.is_sativa)
       expect(page).to have_content(gary_payton.thc_percentage)
       expect(page).to have_content(gary_payton.dry_weight)
-
-
     end
   end
 end

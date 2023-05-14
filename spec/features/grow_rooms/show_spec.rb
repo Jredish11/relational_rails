@@ -39,10 +39,17 @@ RSpec.describe "/grow_rooms/:id", type: :feature do
     it "displays count of the number of strains associated with this grow_room" do
       visit "/grow_rooms/#{room_1.id}"
       expect(page).to have_content("Number of Strains: 2")
-      save_and_open_page
 
       visit "/grow_rooms/#{room_2.id}"
       expect(page).to have_content("Number of Strains: 1")
+    end
+
+    #User Story 10
+    it "display a link to take me to the current grow room's strains page /grow_rooms/:id/strains" do
+      visit "/grow_rooms/#{room_1.id}"
+      expect(page).to have_link("Grow Rooms Strain's", href: "/grow_rooms/#{room_1.id}/strains")
+      visit "/grow_rooms/#{room_2.id}"
+      expect(page).to have_link("Grow Rooms Strain's", href: "/grow_rooms/#{room_2.id}/strains")
     end
   end
 end

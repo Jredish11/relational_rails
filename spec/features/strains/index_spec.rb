@@ -31,7 +31,6 @@ RSpec.describe "/strains", type: :feature do
     end
   end
 
-  #User Story 5
   describe "as a visitor, when I visit grow_rooms strain index page" do
     let!(:room_1) { GrowRoom.create!(name: "Flower Room 1", is_flower: true, plant_capacity: 176)}
     let!(:flo) { room_1.strains.create!(name: "Flo OG", 
@@ -39,16 +38,16 @@ RSpec.describe "/strains", type: :feature do
                                         thc_percentage: 23.04, 
                                         dry_weight: 1500.23,
                                         )}
-    let!(:gary_payton) { room_1.strains.create!(name: "Gary Payton",
-                                                is_sativa: false,
-                                                thc_percentage: 29.69,
-                                                dry_weight: 1323.43,
-                                                )}
-                                                
-
+                                        let!(:gary_payton) { room_1.strains.create!(name: "Gary Payton",
+                                          is_sativa: false,
+                                          thc_percentage: 29.69,
+                                          dry_weight: 1323.43,
+                                          )}
+                                          
+                                          
+    #User Story 5
     it "I see each Strain that is associated with that Grow_Room with each Strain's attributes" do
       visit "/grow_rooms/#{room_1.id}/strains"
-      # save_and_open_page
       expect(page).to have_content(room_1.name)
       expect(page).to have_content(flo.name)
       expect(page).to have_content(flo.is_sativa)
@@ -61,6 +60,7 @@ RSpec.describe "/strains", type: :feature do
     end
   end
 
+  #User Story 8
   describe "as a visitor, when I visit any page on the site" do
     let!(:room_1) { GrowRoom.create!(name: "Flower Room 1", is_flower: true, plant_capacity: 176)}
     let!(:flo) { room_1.strains.create!(name: "Flo OG", 
@@ -75,8 +75,7 @@ RSpec.describe "/strains", type: :feature do
                                                 )}
     it "shows a link at the top of the page that takes the visitor to the Strain Index" do
       visit "/"
-      save_and_open_page
-      expect(page).to have_link("Strain Index", href: strains_path)
+      expect(page).to have_link("Strain Index", href: "/strains")
     end
   end
 end

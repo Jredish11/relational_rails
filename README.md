@@ -132,7 +132,7 @@ As a visitor
 When I visit the Parent Index page
 Then I see a link to create a new Parent record, "New Parent"
 When I click this link
-Then I am taken to '/parents/new' where I  see a form for a new parent record
+Then I am taken to '/grow_rooms/new' where I  see a form for a new parent record
 When I fill out the form with a new parent's attributes:
 And I click the button "Create Parent" to submit the form
 Then a `POST` request is sent to the '/parents' route,

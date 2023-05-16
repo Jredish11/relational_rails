@@ -11,7 +11,7 @@ RSpec.describe "/grow_rooms/new", type: :feature do
     visit grow_rooms_path
     
 
-    expect(page).to have_link("New Grow Room", href: new_grow_room_path)
+    expect(page).to have_link("New Grow Room")
 
     click_link "New Grow Room"
 

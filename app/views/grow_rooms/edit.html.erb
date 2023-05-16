@@ -1,0 +1,12 @@
+<%= form_with url: "/grow_rooms/#{@grow_room.id}", method: :patch, local: true do |form| %>
+  <ul><%= form.label :name %>
+  <%= form.text_field :name %></ul>
+
+  <ul> <%= form.label :is_flower %>
+  <%= form.check_box :is_flower %></ul>
+
+  <ul><%= form.label :plant_capacity %>
+  <%= form.text_field :plant_capacity %></ul>
+
+  <ul><%= form.submit "Update Grow Room" %></ul>
+  <% end %>

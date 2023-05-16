@@ -9,7 +9,7 @@ RSpec.describe "/grow_rooms/new", type: :feature do
     #User Story 11
     it "displays a link to create a new Grow_room record, 'New Grow_room'" do
     visit grow_rooms_path
-    save_and_open_page
+    
 
     expect(page).to have_link("New Grow Room", href: new_grow_room_path)
 

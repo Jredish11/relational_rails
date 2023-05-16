@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get "/strains/:id", to: "strains#show"
     get "/", to: "strains#index"
     post "/grow_rooms", to: "grow_rooms#create"
+    get "/grow_rooms/:id/edit", to: "grow_rooms#edit"
+    patch "/grow_rooms/:id", to: "grow_rooms#update"
     
   # Defines the root path route ("/")
   # root "articles#index"

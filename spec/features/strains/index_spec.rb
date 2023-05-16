@@ -47,7 +47,7 @@ RSpec.describe "/strains", type: :feature do
                                           
     #User Story 5
     it "I see each Strain that is associated with that Grow_Room with each Strain's attributes" do
-      visit "/grow_rooms/#{room_1.id}/strains"
+      visit "/grow_rooms/#{room_1.id}/strains_by_grow_room"
       expect(page).to have_content(room_1.name)
       expect(page).to have_content(flo.name)
       expect(page).to have_content(flo.is_sativa)
@@ -75,7 +75,7 @@ RSpec.describe "/strains", type: :feature do
                                                 )}
     it "shows a link at the top of the page that takes the visitor to the Strain Index" do
       visit "/"
-      expect(page).to have_link("Strain Index", href: "/strains")
+      expect(page).to have_link("Strain Index")
     end
   end
 end

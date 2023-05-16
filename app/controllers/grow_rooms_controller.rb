@@ -12,11 +12,25 @@ class GrowRoomsController < ApplicationController
   
   end
 
+  def edit
+    @grow_room = GrowRoom.find(params[:id])
+  end
+
+  def update
+    @grow_room = GrowRoom.find(params[:id])
+    @grow_room.update(name: params[:name],
+                    is_flower: params[:is_flower],
+                    plant_capacity: params[:plant_capacity])
+    redirect_to "/grow_rooms/#{@grow_room.id}"
+  end
+
   def create
     GrowRoom.create!(name: params[:name],
                     is_flower: params[:is_flower],
                     plant_capacity: params[:plant_capacity])
     redirect_to "/grow_rooms"
   end
+
+ 
 
 end
